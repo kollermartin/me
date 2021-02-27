@@ -1,0 +1,59 @@
+.landscape {
+    grid-column: full-start / full-end;
+    grid-row: 1/2;
+    
+    background-image: linear-gradient(rgba(58, 60, 61,0.8), rgba(45, 46, 48,0.8)), url(../img/landscape2.jpg);
+    background-attachment: fixed;
+    background-position-y: 60%;
+    background-size: cover;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+
+
+    letter-spacing: .3rem;
+
+    &__header{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        &__preheader {
+           font-size: 5rem;
+        }
+
+        &__heading {
+            
+            font-size: 10rem;
+        }
+    
+        &__subheading {
+            
+            font-size: 5rem;
+        }
+    }
+    
+
+    &__scroll {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &__icon {
+            font-size: 15rem;
+            display: block;
+            transition: transform .4s;
+            width: 10rem;
+            &:hover {
+                transform: scale(1.2) translateY(1rem);
+            }
+
+        }
+    }
+}

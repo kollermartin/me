@@ -252,6 +252,8 @@ html {
 
 .web__image {
   position: relative;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .web__image a:visited,
@@ -266,10 +268,35 @@ html {
   width: 55rem;
 }
 
+.web__image:hover .linkVisit {
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  background-color: #3a3636;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: 0;
+}
+
+.web__image:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
 .web__image .linkVisit {
   width: 80%;
+  height: 40%;
   position: absolute;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 2rem 5rem;
   top: 50%;
   left: 50%;
@@ -278,8 +305,22 @@ html {
   font-size: 5rem;
   background-color: rgba(58, 54, 54, 0.918);
   text-transform: uppercase;
-  -webkit-box-shadow: 0px 0px 20px 15px white;
-          box-shadow: 0px 0px 20px 15px white;
+  -webkit-box-shadow: 0px 0px 15px 10px white;
+          box-shadow: 0px 0px 15px 10px white;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.web__image .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.web__image .overlay:hover {
+  background-color: rgba(141, 133, 128, 0.384);
 }
 
 .web__info {

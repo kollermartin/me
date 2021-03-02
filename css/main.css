@@ -134,6 +134,7 @@ html {
   -ms-grid-row: 5;
   -ms-grid-row-span: 1;
   grid-row: 5/6;
+  margin: 5rem;
   padding: 5rem 0;
 }
 
@@ -146,15 +147,12 @@ html {
 
 .contact__bio {
   padding: 5rem;
-  width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 5rem;
 }
 
@@ -162,38 +160,38 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+}
+
+.contact .bio__header__photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .contact .bio__header__photo img {
   width: 15vw;
-  border-radius: 50%;
+  border-radius: 25%;
 }
 
 .contact .bio__body {
-  width: 50rem;
-  margin: 2rem auto;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.contact .bio__body:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .contact .bio__body__info {
   padding: 2rem;
   font-size: 2.5rem;
-  width: 60rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0 auto;
 }
 
 .contact .bio__body__info .info__icon img {
@@ -208,7 +206,6 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 25rem;
   margin-left: 2rem;
 }
 

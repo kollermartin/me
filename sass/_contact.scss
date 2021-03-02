@@ -1,7 +1,7 @@
 .contact {
     grid-column: center-start / center-end;
     grid-row: 5/6;
-
+    margin: 5rem;
     padding: 5rem 0;
 
     a:visited,
@@ -15,44 +15,54 @@
 
     &__bio {
         padding: 5rem;
-        width: 60vw;
+        //width: 60vw;
         display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        
+       // flex-direction: column;
+       // margin: 0 auto;
+        justify-content: center;
         margin-top: 5rem;
+        
         
     }
 
     .bio {
         
+
         &__header {
             display: flex;
-            align-items: center;
-            justify-content: space-evenly;
+           // justify-content: center;
+            
             &__photo {
-                
+                display: flex;
+                //flex-direction: column;
+               // align-items: center;
                 img {
                     width: 15vw;
-                    border-radius: 50%;
+                    border-radius: 25%;
                 }
             }
         }
 
         &__body {
            
-            width: 50rem;
-            margin: 2rem auto;
+            // width: 50rem;
+            // margin: 2rem auto;
+            transition: all .2s;
+            &:hover {
+                transform: scale(1.1);
+            }
+
             &__info {
                 
                 padding: 2rem;
                 font-size: 2.5rem;
-                width: 60rem;
+                //width: 60rem;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+               // justify-content: center;
+                
                 //box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.219);
-                margin: 0 auto;
+               
                 
 
                 .info__icon {
@@ -64,7 +74,7 @@
                 .info__detail {
                     display: flex;
                     flex-direction: column;
-                    min-width: 25rem;
+                    // min-width: 25rem;
                     margin-left: 2rem;
 
                     &__platform {

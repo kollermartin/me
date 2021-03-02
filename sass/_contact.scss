@@ -1,4 +1,83 @@
 .contact {
     grid-column: center-start / center-end;
     grid-row: 5/6;
+
+    padding: 5rem 0;
+
+    a:visited,
+            a:link,
+            a:active,
+            a:link {
+                text-decoration: none;
+                
+                
+            }
+
+    &__bio {
+        padding: 5rem;
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        
+        margin-top: 5rem;
+        
+    }
+
+    .bio {
+        
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            &__photo {
+                
+                img {
+                    width: 15vw;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &__body {
+           
+            width: 50rem;
+            margin: 2rem auto;
+            &__info {
+                
+                padding: 2rem;
+                font-size: 2.5rem;
+                width: 60rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.219);
+                margin: 0 auto;
+                
+
+                .info__icon {
+                    img {
+                        width: 8rem;
+                    }
+                }
+
+                .info__detail {
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 25rem;
+                    margin-left: 2rem;
+
+                    &__platform {
+                        font-size: 3rem;
+                    }
+
+                    &__det {
+                        color: rgb(105, 95, 95);
+                    }
+                }
+            }
+
+        }
+    }
+
 }

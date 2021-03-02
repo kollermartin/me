@@ -22,6 +22,7 @@
     &__image{
         position: relative;
         transition: all .3s;
+        
         a:visited,
             a:link,
             a:active,
@@ -33,6 +34,9 @@
 
         img {
             width: 55rem;
+            height: 31rem;
+            object-fit: cover;
+            
         }
 
         &:hover .linkVisit {
@@ -42,6 +46,10 @@
             background-color: rgb(58, 54, 54);
             box-shadow: none;
             opacity: 0;
+        }
+
+        &:hover img {
+            border: 5px solid #fff;
         }
 
         &:hover {
@@ -75,6 +83,7 @@
 
             &:hover {
                 background-color: rgba(141, 133, 128, 0.384);
+                box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.411);
             }
         }
     }

@@ -11,6 +11,22 @@ html {
     font-size: 62.5%;
     font-weight: 400;
     font-family: $font-main;
+
+    @media only screen and (max-width: $bp-big) {
+        font-size: 55%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 50%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        font-size: 47%;
+    }
+
+    @media only screen and (max-width: $bp-min) {
+        font-size: 44%;
+    }
 }
 
 .container {
@@ -18,4 +34,8 @@ html {
     display: grid;
     grid-template-columns:[full-start] minmax(5rem,1fr) [center-start] repeat(8,[col-start] minmax(min-content, 1fr)[col-end]) [center-end] minmax(5rem,1fr) [full-end];
     grid-template-rows: 100vh repeat(4,min-content);
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns:[full-start] minmax(2.5rem,1fr) [center-start] repeat(8,[col-start] minmax(min-content, 1fr)[col-end]) [center-end] minmax(2.5rem,1fr) [full-end];
+    }
 }

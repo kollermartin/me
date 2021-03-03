@@ -3,6 +3,10 @@
   grid-column: full-start / full-end;
   grid-row: 3/4;
 
+  @media only screen and (max-width: $bp-small){
+    padding: 2.5rem 0;
+  }
+
   &__heading {
     text-align: center;
   }
@@ -14,6 +18,11 @@
   grid-row-gap: 3rem;
   margin-top: 4rem;
   padding: 0 5rem;
+
+  @media only screen and (max-width: $bp-small){
+    margin-top: 2.5rem;
+    padding: 0 2.5rem;
+  }
 
   &__card {
     display: flex;

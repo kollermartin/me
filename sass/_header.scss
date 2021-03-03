@@ -12,10 +12,19 @@
     width: 100%;
     background-color: #fff;
     z-index: 100;
-
+    @media only screen and (max-width: $bp-small){
+        padding: 0;
+    }
+    @media only screen and (max-width: $bp-min){
+        justify-content: center;
+    }
     .name {
         font-weight: bold;
         font-size: 3rem;
+
+        @media only screen and (max-width: $bp-min){
+            font-size: 0;
+        }
     }
 
     .navigation {

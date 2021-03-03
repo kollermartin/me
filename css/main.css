@@ -134,7 +134,7 @@ html {
   -ms-grid-row: 5;
   -ms-grid-row-span: 1;
   grid-row: 5/6;
-  padding: 5rem 0;
+  padding: 2.5rem 0;
 }
 
 .contact a:visited,
@@ -154,7 +154,6 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 5rem;
 }
 
 .contact .bio__header {
@@ -174,8 +173,6 @@ html {
 .contact .bio__header__photo img {
   width: 15vw;
   border-radius: 25%;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.493);
-          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.493);
 }
 
 .contact .bio__body {
@@ -194,8 +191,20 @@ html {
           align-items: center;
 }
 
+.contact .bio__body__info .info__icon {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
 .contact .bio__body__info .info__icon img {
   width: 8rem;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.171);
+          box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.171);
+}
+
+.contact .bio__body__info .info__icon:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .contact .bio__body__info .info__detail {

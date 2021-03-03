@@ -340,9 +340,18 @@ html {
   letter-spacing: .3rem;
 }
 
+@media only screen and (max-width: 81.25em) {
+  .landscape {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(58, 60, 61, 0.8)), to(rgba(45, 46, 48, 0.8))), url(../img/mediumres.jpg);
+    background-image: linear-gradient(rgba(58, 60, 61, 0.8), rgba(45, 46, 48, 0.8)), url(../img/mediumres.jpg);
+    background-size: cover;
+  }
+}
+
 @media only screen and (max-width: 30em) {
   .landscape {
-    background-position-x: 70%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(58, 60, 61, 0.8)), to(rgba(45, 46, 48, 0.8))), url(../img/mobileres.jpg);
+    background-image: linear-gradient(rgba(58, 60, 61, 0.8), rgba(45, 46, 48, 0.8)), url(../img/mobileres.jpg);
   }
 }
 

@@ -12,6 +12,8 @@
     width: 100%;
     background-color: #fff;
     z-index: 100;
+    cursor: default;
+
     @media only screen and (max-width: $bp-small){
         padding: 0;
     }
@@ -37,6 +39,7 @@
            
             &:hover {
                 transform: translateY(.3rem) scale(1.1);
+                cursor: pointer;
             }
             a:visited,
             a:link,

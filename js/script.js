@@ -4,6 +4,7 @@ const navAbout = document.querySelector('.nav--about');
 const navSkills = document.querySelector('.nav--skills');
 const navProjects = document.querySelector('.nav--projects');
 const navContact = document.querySelector('.nav--contact');
+const header = document.querySelector('.header');
 
 const homeEl = document.querySelector('.landscape');
 const aboutEl = document.querySelector('.about');
@@ -13,9 +14,9 @@ const contactEl = document.querySelector('.contact');
 
 const getOffset = function(el){
     const rect = el.getBoundingClientRect();
-
+    const headerProps = header.getBoundingClientRect();
     return {
-        top: rect.top + window.scrollY - 50,
+        top: rect.top + window.scrollY - headerProps.height,
     };
 }
 

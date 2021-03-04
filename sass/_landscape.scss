@@ -70,9 +70,13 @@
             display: block;
             transition: transform .4s;
             width: 10rem;
-            &:hover {
+
+            @media (hover: hover) {
+                &:hover {
                 transform: scale(1.2) translateY(1rem);
+                }
             }
+            
 
         }
     }

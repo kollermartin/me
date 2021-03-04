@@ -1,0 +1,52 @@
+const arrowScroll = document.querySelector('.landscape__scroll__icon');
+const navHome = document.querySelector('.nav--home');
+const navAbout = document.querySelector('.nav--about');
+const navSkills = document.querySelector('.nav--skills');
+const navProjects = document.querySelector('.nav--projects');
+const navContact = document.querySelector('.nav--contact');
+
+const homeEl = document.querySelector('.landscape');
+const aboutEl = document.querySelector('.about');
+const skillsEl = document.querySelector('.skills');
+const projectsEl = document.querySelector('.project');
+const contactEl = document.querySelector('.contact');
+
+const getOffset = function(el){
+    const rect = el.getBoundingClientRect();
+
+    return {
+        top: rect.top + window.scrollY - 50,
+    };
+}
+
+const scrollToElement = function(el) {
+    const position = getOffset(el);
+    window.scrollTo({
+        top: position.top,
+        behavior: "smooth"
+    })
+}
+
+
+arrowScroll.addEventListener("click",function(){
+    scrollToElement(aboutEl);
+});
+
+
+navHome.addEventListener("click",function(){
+    scrollToElement(homeEl);
+});
+
+navAbout.addEventListener("click",function(){
+    scrollToElement(aboutEl);
+});
+
+navSkills.addEventListener("click",function(){
+    scrollToElement(skillsEl);
+});
+
+navProjects.addEventListener("click",function(){
+    scrollToElement(projectsEl);
+});
+
+

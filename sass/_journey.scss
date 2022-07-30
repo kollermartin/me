@@ -1,0 +1,65 @@
+.journey {
+    grid-column: full-start / full-end;
+    margin: 5rem 0;
+    font-size: 2.5rem;
+
+    @media only screen and (max-width: $bp-xbig) {
+        grid-column: center-start / center-end;
+
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr min-content 1fr min-content 1fr;
+        gap: 5rem;
+        padding: 0 5rem;
+
+        @media only screen and (max-width: $bp-xbig) {
+            grid-template-columns: 1fr;
+            place-content: center;
+            padding: 0;
+        }
+
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__heading {
+            text-align: center;
+        }
+
+        &__body {
+            text-align: justify;
+
+            @media only screen and (max-width: $bp-xbig) {
+                text-align: center;
+            }
+        }
+
+        &__footer {
+            text-align: center;
+            font-style: oblique;
+        }
+    }
+
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--icon {
+            width: 10rem;
+
+            @media only screen and (max-width: $bp-xbig) {
+                transform: rotate(90deg);;
+            }
+        }
+    }
+}

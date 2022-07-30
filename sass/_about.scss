@@ -1,6 +1,5 @@
 .about {
   grid-column: center-start / center-end;
-  grid-row: 2/3;
   padding: 5rem 0;
 
   @media only screen and (max-width: $bp-big){

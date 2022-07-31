@@ -640,6 +640,7 @@ footer {
   grid-template-columns: 1fr min-content 1fr min-content 1fr;
   gap: 5rem;
   padding: 0 5rem;
+  margin: 10rem 0;
 }
 
 @media only screen and (max-width: 91.25em) {

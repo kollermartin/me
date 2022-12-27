@@ -177,3 +177,34 @@
         }
     }
 }
+
+.github {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a:visited,
+            a:link,
+            a:active,
+            a:link {
+                color: inherit;
+                border: 1px dotted inherit;
+                
+            }
+
+    h2 {
+        margin: 4rem 0 2rem 0;
+    }
+
+    img {
+        transition: all .5s;
+        width: 8rem;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+
+}

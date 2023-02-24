@@ -16,6 +16,7 @@
 .web {
     margin-top: 7rem;
     display: flex;
+    background-color: #fff;
 
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.219);
     padding:1rem 2rem;
@@ -171,6 +172,11 @@
             
             img {
                 width: 10rem;
+
+                @media only screen and (max-width: $bp-small)
+                {
+                    width: 5rem;
+                }
             }
 
             
@@ -182,6 +188,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5rem;
 
     a:visited,
             a:link,

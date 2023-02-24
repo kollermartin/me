@@ -28,6 +28,10 @@ const scrollToElement = function(el) {
     })
 }
 
+document.addEventListener("scroll", function() {
+    window.scrollY > 0 ? header.classList.add('header__scroll') : header.classList.remove('header__scroll');
+})
+
 
 arrowScroll.addEventListener("click",function(){
     scrollToElement(aboutEl);
@@ -49,5 +53,9 @@ navSkills.addEventListener("click",function(){
 navProjects.addEventListener("click",function(){
     scrollToElement(projectsEl);
 });
+
+navContact.addEventListener("click", function() {
+    scrollToElement(contactEl);
+})
 
 

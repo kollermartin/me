@@ -40,6 +40,8 @@ html {
 }
 
 .container {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#FDFCFB), to(#E2D1C3));
+  background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
   color: #282828;
   display: -ms-grid;
   display: grid;
@@ -72,8 +74,6 @@ html {
           justify-content: space-between;
   font-size: 2.5rem;
   padding: 0 2rem;
-  -webkit-box-shadow: 0px 0px 5px #000;
-          box-shadow: 0px 0px 5px #000;
   position: fixed;
   top: 0;
   left: 0;
@@ -81,6 +81,7 @@ html {
   background-color: #fff;
   z-index: 100;
   cursor: default;
+  background: #FDFCFB;
 }
 
 @media only screen and (max-width: 35em) {
@@ -106,6 +107,12 @@ html {
   .header .name {
     font-size: 0;
   }
+}
+
+.header__scroll {
+  -webkit-box-shadow: 0px 0px 5px #000;
+          box-shadow: 0px 0px 5px #000;
+  background: #fff;
 }
 
 .header .navigation {
@@ -314,12 +321,17 @@ html {
 
 .landscape {
   grid-column: full-start / full-end;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(58, 60, 61, 0.8)), to(rgba(45, 46, 48, 0.8))), url(../img/landscape2.jpg);
-  background-image: linear-gradient(rgba(58, 60, 61, 0.8), rgba(45, 46, 48, 0.8)), url(../img/landscape2.jpg);
-  background-attachment: fixed;
-  background-position-y: 50%;
-  background-position-x: 50%;
-  background-size: cover;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fdfcfb+0,fdfcfb+59,fdfcfb+60,e2d1c3+60,e2d1c3+100 */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fdfcfb+0,fdfcfb+57,fdfcfb+57,e2d1c3+57,e2d1c3+100 */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fdfcfb+0,fdfcfb+57,fdfcfb+57,f6f0ec+57,f6f0ec+100 */
+  background: #fdfcfb;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #fdfcfb 0%, #fdfcfb 57%, #fdfcfb 57%, #f6f0ec 57%, #f6f0ec 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfcfb', endColorstr='#f6f0ec',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -337,20 +349,6 @@ html {
   letter-spacing: .3rem;
 }
 
-@media only screen and (max-width: 81.25em) {
-  .landscape {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(58, 60, 61, 0.8)), to(rgba(45, 46, 48, 0.8))), url(../img/mediumres.jpg);
-    background-image: linear-gradient(rgba(58, 60, 61, 0.8), rgba(45, 46, 48, 0.8)), url(../img/mediumres.jpg);
-  }
-}
-
-@media only screen and (max-width: 30em) {
-  .landscape {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(58, 60, 61, 0.8)), to(rgba(45, 46, 48, 0.8))), url(../img/mobileres.jpg);
-    background-image: linear-gradient(rgba(58, 60, 61, 0.8), rgba(45, 46, 48, 0.8)), url(../img/mobileres.jpg);
-  }
-}
-
 .landscape__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -365,7 +363,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #fff;
+  color: #000;
 }
 
 .landscape__header__preheader {
@@ -450,6 +448,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #fff;
   -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.219);
           box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.219);
   padding: 1rem 2rem;
@@ -645,6 +644,12 @@ html {
   width: 10rem;
 }
 
+@media only screen and (max-width: 35em) {
+  .technologyTable .card__body img {
+    width: 5rem;
+  }
+}
+
 .github {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -656,6 +661,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 5rem;
 }
 
 .github a:visited,
@@ -704,7 +710,7 @@ footer {
 }
 
 .line--w {
-  background-color: #fff;
+  background-color: #000;
 }
 
 .line--b {

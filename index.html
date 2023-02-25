@@ -22,14 +22,14 @@
     <header class="header">
       <div class="name">Martin Koller</div>
       <ul class="navigation">
-        <li class="navigation__item nav--home"><a>Home</a></li>
-        <li class="navigation__item nav--about"><a>About me</a></li>
-        <li class="navigation__item nav--skills"><a>Skills</a></li>
-        <li class="navigation__item nav--projects"><a>Projects</a></li>
-        <li class="navigation__item nav--contact"><a>Contact</a></li>
+        <li name="c-home" class="navigation__item navigation__item--not-scrolled nav--home"><a>Home</a></li>
+        <li name="c-about" class="navigation__item navigation__item--not-scrolled nav--about"><a>About me</a></li>
+        <li name="c-skills" class="navigation__item navigation__item--not-scrolled nav--skills"><a>Skills</a></li>
+        <li name="c-projects" class="navigation__item navigation__item--not-scrolled nav--projects"><a>Projects</a></li>
+        <li name="c-contact" class="navigation__item navigation__item--not-scrolled nav--contact"><a>Contact</a></li>
       </ul>
     </header>
-    <section class="landscape">
+    <section id="c-home" class="landscape">
       <div class="landscape__header">
         <div class="landscape__header__preheader">Hi, I am</div>
         <div class="landscape__header__heading">Martin Koller</div>
@@ -40,16 +40,15 @@
         <img src="./img/arrow-icon.png" class="landscape__scroll__icon" />
       </div>
     </section>
-    <section class="about">
+    <section id="c-about" class="about">
       <h2 class="about__heading heading--l">About me</h2>
       <div class="profile">
         <div class="profile__info">
           <h3 class="heading--s">Hi,</h3>
           <p>
-            first and foremost, I love modern technologies and coding.
-            Programming / coding has been my passion since high school. Even though I
-            might not be the best at what I am doing, I always try to give it my
-            all. <b>Because hard work pays off!</b></p>
+            I am an enthusiastic front end developer who is not afraid of any challenge and keeps up with the latest technologies and trends that are currently being used.
+            Programming/coding has been a passion of mine since high school. While I may not be the best at what I do, I always try to give it my all.
+          </p>
         </div>
         <div class="profile__photo">
           <img
@@ -59,34 +58,35 @@
           />
         </div>
       </div>
+      <section class="journey">
+        <h2 class="heading--l ta-c">Work experience</h2>
+        <div class="journey__container">
+          <div class="journey__item">
+            <h3 class="journey__item__heading">Smartiple s.r.o.</h3>
+            <div class="journey__item__footer"><b>September 2019 - February 2021</b></div>
+            <div class="journey__item__body">This was my first work experience in IT. I was employed as part-time front end developer, mostly doing simple websites.</div>
+          </div>
+  
+          <div class="journey__arrow"><img class="journey__arrow--icon" src="img/rotated-right-arrow.png"></div>
+  
+          <div class="journey__item">
+            <h3 class="journey__item__heading">Tender systems s.r.o.</h3>
+            <div class="journey__item__footer"><b>March 2021 - July 2022</b></div>
+            <div class="journey__item__body">I was employed as full-time software developer focused on front end. I was doing web apps in Angular most of the time. It was my first full-time job and I have gained a lot of experience out of it.</div>
+          </div>
+  
+          <div class="journey__arrow"><img class="journey__arrow--icon" src="img/rotated-right-arrow.png"></div>
+  
+          <div class="journey__item">
+            <h3 class="journey__item__heading">K-Businesscom s.r.o.</h3>
+            <div class="journey__item__footer"><b>August 2022 till now</b></div>
+            <div class="journey__item__body">I have been employed as front end developer. I develop web apps in Angular. This is my first time working in international company.</div>
+          </div>
+        </div>
+      </section>
     </section>
-    <section class="journey">
-      <h2 class="heading--l ta-c">My journey</h2>
-      <div class="journey__container">
-        <div class="journey__item">
-          <h3 class="journey__item__heading">Smartiple s.r.o.</h3>
-          <div class="journey__item__footer"><b>September 2019 - February 2021</b></div>
-          <div class="journey__item__body">This was my first work experience in IT! I was employed as part-time front end developer, mostly doing simple websites.</div>
-        </div>
-
-        <div class="journey__arrow"><img class="journey__arrow--icon" src="img/rotated-right-arrow.png"></div>
-
-        <div class="journey__item">
-          <h3 class="journey__item__heading">Tender systems s.r.o.</h3>
-          <div class="journey__item__footer"><b>March 2021 - July 2022</b></div>
-          <div class="journey__item__body">I was employed as full-time software developer specialized on front end. I was doing web apps in Angular most of the time. It was my first full-time job and I have gained a lot of experience out of it.</div>
-        </div>
-
-        <div class="journey__arrow"><img class="journey__arrow--icon" src="img/rotated-right-arrow.png"></div>
-
-        <div class="journey__item">
-          <h3 class="journey__item__heading">K-Businesscom s.r.o.</h3>
-          <div class="journey__item__footer"><b>August 2022 till now</b></div>
-          <div class="journey__item__body">I have been employed as front end developer. I develop web apps in Angular. This is my first time working in international company, so exciting!</div>
-        </div>
-      </div>
-    </section>
-    <section class="skills">
+    
+    <section id="c-skills" class="skills">
       <h2 class="skills__heading heading--l">Skills</h2>
       <div class="technologies">
         <div class="technologies__card">
@@ -140,7 +140,7 @@
       </div>
     </section>
 
-    <section class="project">
+    <section id="c-projects" class="project">
       <h2 class="project__heading heading--l">Projects</h2>
       <div class="web">
         <div class="web__image">
@@ -443,8 +443,8 @@
       </div>
 
     </section>
-    <section class="contact">
-      <h2 class="contact__heading heading--s ta-c">Feel free to contact me!</h2>
+    <section id="c-contact" class="contact">
+      <h2 class="contact__heading heading--m ta-c">Feel free to contact me!</h2>
       <div href="#" class="contact__bio">
         <div class="bio__header">
           <div class="bio__header__photo">

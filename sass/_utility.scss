@@ -18,7 +18,7 @@
 }
 
 .heading--m {
-  font-size: 4.5rem;
+  font-size: 4rem;
 }
 
 .heading--s {
@@ -35,4 +35,8 @@ margin-bottom: 2.5rem;
 
 .mt--m {
   margin-top: 3rem;
+}
+
+.underscore {
+  border-bottom: 2px solid $text-grey;
 }

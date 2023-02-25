@@ -1,5 +1,4 @@
 .journey {
-    grid-column: full-start / full-end;
     margin: 5rem 0;
     font-size: 2.5rem;
 
@@ -14,34 +13,23 @@
 
     &__container {
         display: grid;
-        grid-template-columns: 1fr min-content 1fr min-content 1fr;
-        gap: 5rem;
-        padding: 0 5rem;
-        margin: 10rem 0;
-
-        @media only screen and (max-width: $bp-xbig) {
-            grid-template-columns: 1fr;
-            place-content: center;
-            padding: 0;
-        }
-
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     &__item {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        margin: 5rem 0;
 
         &__heading {
             text-align: center;
         }
 
         &__body {
-            text-align: justify;
-
-            @media only screen and (max-width: $bp-xbig) {
-                text-align: center;
-            }
+            text-align: center;
+            max-width: 40em;
         }
 
         &__footer {
@@ -57,10 +45,7 @@
 
         &--icon {
             width: 10rem;
-
-            @media only screen and (max-width: $bp-xbig) {
-                transform: rotate(90deg);;
-            }
+            transform: rotate(90deg);
         }
     }
 }

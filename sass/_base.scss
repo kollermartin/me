@@ -30,7 +30,7 @@ html {
 }
 
 .container {
-    background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+    background-color: #f6f0ec;
     color:$text-grey;
     display: grid;
     grid-template-columns:[full-start] minmax(5rem,1fr) [center-start] repeat(8,[col-start] minmax(min-content, 1fr)[col-end]) [center-end] minmax(5rem,1fr) [full-end];

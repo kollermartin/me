@@ -1,72 +1,62 @@
 .landscape {
     grid-column: full-start / full-end;
-    
-    // background-image: linear-gradient(rgba(58, 60, 61,0.8), rgba(45, 46, 48,0.8)), url(../img/landscape2.jpg);
-    // background-attachment: fixed;
-    // background-position-y: 50%;
-    // background-position-x: 50%;
-    // background-size: cover;
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fdfcfb+0,fdfcfb+59,fdfcfb+60,e2d1c3+60,e2d1c3+100 */
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fdfcfb+0,fdfcfb+57,fdfcfb+57,e2d1c3+57,e2d1c3+100 */
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fdfcfb+0,fdfcfb+57,fdfcfb+57,f6f0ec+57,f6f0ec+100 */
-background: rgb(253,252,251); /* Old browsers */
-background: -moz-linear-gradient(-45deg,  rgba(253,252,251,1) 0%, rgba(253,252,251,1) 57%, rgba(253,252,251,1) 57%, rgba(246,240,236,1) 57%, rgba(246,240,236,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg,  rgba(253,252,251,1) 0%,rgba(253,252,251,1) 57%,rgba(253,252,251,1) 57%,rgba(246,240,236,1) 57%,rgba(246,240,236,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg,  rgba(253,252,251,1) 0%,rgba(253,252,251,1) 57%,rgba(253,252,251,1) 57%,rgba(246,240,236,1) 57%,rgba(246,240,236,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfcfb', endColorstr='#f6f0ec',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: rgb(253, 252, 251);
+    /* Old browsers */
+    background: -moz-linear-gradient(225deg, #ffffff 0%, #ffffff 57%, #ffffff 57%, #f6f0ec 57%, #f6f0ec 100%);
+    ;
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(225deg, #ffffff 0%, #ffffff 57%, #ffffff 57%, #f6f0ec 57%, #f6f0ec 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(250deg, #ffffff 0%, #ffffff 50%, #f6f0ec 50%, #f6f0ec 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfcfb', endColorstr='#f6f0ec', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
 
 
 
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     margin-top: 5rem;
     cursor: default;
-
     letter-spacing: .3rem;
-    // @media only screen and (max-width: $bp-big) {
-    //     background-image: linear-gradient(rgba(58, 60, 61,0.8), rgba(45, 46, 48,0.8)), url(../img/mediumres.jpg);
-        
-    // }
-    // @media only screen and (max-width: $bp-min) {
-    //     background-image: linear-gradient(rgba(58, 60, 61,0.8), rgba(45, 46, 48,0.8)), url(../img/mobileres.jpg);
-        
-        
-    // }
-    &__header{
+
+    &__header {
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #000;
+        color: $text-grey;
+
         &__preheader {
-           font-size: 5rem;
-           
-           @media only screen and (max-width: $bp-min) {
-            font-size: 4rem; 
+            font-size: 5rem;
+
+            @media only screen and (max-width: $bp-min) {
+                font-size: 4rem;
             }
         }
 
         &__heading {
-            
+
             font-size: 10rem;
 
             @media only screen and (max-width: $bp-min) {
-                font-size: 7rem; 
-                }
+                font-size: 7rem;
+            }
         }
-    
+
         &__subheading {
-            
+
             font-size: 5rem;
+
             @media only screen and (max-width: $bp-min) {
-                font-size: 3.5rem; 
-                }
+                font-size: 3.5rem;
+            }
         }
     }
-    
+
 
     &__scroll {
         color: #fff;
@@ -83,10 +73,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfcfb', end
 
             @media (hover: hover) {
                 &:hover {
-                transform: scale(1.2) translateY(1rem);
+                    transform: scale(1.2) translateY(1rem);
                 }
             }
-            
+
 
         }
     }

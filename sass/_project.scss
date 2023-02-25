@@ -1,5 +1,7 @@
 .project {
     grid-column: center-start / center-end;
+    display: grid;
+    justify-items: center;
 
     padding: 5rem 0;
 
@@ -22,6 +24,7 @@
     padding:1rem 2rem;
     flex-wrap: wrap;
     place-items: center;
+    max-width: 140rem;
 
     @media only screen and (max-width: $bp-medium) {
         padding: 2rem;
@@ -171,12 +174,7 @@
         &__body {
             
             img {
-                width: 10rem;
-
-                @media only screen and (max-width: $bp-small)
-                {
-                    width: 5rem;
-                }
+                width: 5rem;
             }
 
             

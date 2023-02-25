@@ -9,10 +9,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff;
     z-index: 100;
     cursor: default;
-    background: #FDFCFB;
+    background: #fff;
+    padding-top: 1rem;
+
     @media only screen and (max-width: $bp-small){
         padding: 0;
     }
@@ -29,22 +30,26 @@
     }
 
     &__scroll {
+        transition: all .3s ease;
         box-shadow: 0px 0px 5px #000;
         background: #fff;
+        padding-top: 0rem;
     }
 
     .navigation {
         list-style: none;
         display: flex;
-        
+
         &__item {
-            padding: 0 1rem;
-            transition: all .2s;
+            margin: 0 1rem;
+            padding-bottom: 1px;
+            transition: color  .2s, border-color .2s, background-color .2s, padding .2s;
+            cursor: pointer;
            @media (hover: hover){
-               &:hover {
-                transform: translateY(.3rem) scale(1.1);
-                cursor: pointer;
-            }
+              &:hover {
+                color: #0000007b;
+                border-color: #5b58587b;
+              }
            }
             
             a:visited,
@@ -52,32 +57,40 @@
             a:active,
             a:link {
                 text-decoration: none;
-                color: $text-grey;
+                color: #0000007b;
                 
             }
-            // a::after {
-            //     content: "";
-            //     display: block;
-            //     width: 100%;
-            //     height: 3px;
-            //     background-color: #fff;
-            // }
-
-            // a:hover {
-            //     transition: all 1s;
-            //     &::after {
-            //     content: "";
-            //     display: block;
-            //     width: 100%;
-            //     height: 3px;
-            //     background-color: black;
-            //     transform-origin: left;
-            //     }
-               
-            // }
             
         }
-
         
+        &__item--not-scrolled {
+            border-bottom: 2px solid #282727;
+            padding: 1rem;
+
+            @media only screen and (max-width: $bp-medium){
+                padding: 0;
+                border-bottom: 0;
+            }
+        }
+
+        &__item--not-scrolled:last-of-type {
+            background-color: $text-grey;
+            color: #fff;
+            border-bottom: 0;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: #5b58587b;
+            }
+
+            @media only screen and (max-width: $bp-medium){
+                background-color: #fff;
+            }
+        }
+
+        &__item-scrolled {
+            background-color: none;
+            padding: 0;
+        }
     }
 }

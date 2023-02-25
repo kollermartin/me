@@ -160,19 +160,17 @@ html {
 }
 
 .header .navigation__item--not-scrolled:last-of-type {
-  background-color: #282828;
-  color: #fff;
   border-bottom: 0;
   border-radius: 5px;
 }
 
-.header .navigation__item--not-scrolled:last-of-type:hover {
-  background-color: #5b58587b;
-}
-
-@media only screen and (max-width: 56.25em) {
+@media (hover: hover) {
   .header .navigation__item--not-scrolled:last-of-type {
-    background-color: #fff;
+    background-color: #282828;
+    color: #fff;
+  }
+  .header .navigation__item--not-scrolled:last-of-type:hover {
+    background-color: #5b58587b;
   }
 }
 

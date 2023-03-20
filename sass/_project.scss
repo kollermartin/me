@@ -22,6 +22,15 @@
     place-items: center;
     max-width: 140rem;
 
+    a:visited,
+            a:link,
+            a:active,
+            a:link {
+                color: inherit;
+                border: 1px dotted inherit;
+                
+            }
+
     @media only screen and (max-width: $bp-medium) {
         padding: 2rem;
       }

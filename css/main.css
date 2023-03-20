@@ -492,6 +492,14 @@ html {
   max-width: 140rem;
 }
 
+.web a:visited,
+.web a:link,
+.web a:active,
+.web a:link {
+  color: inherit;
+  border: 1px dotted inherit;
+}
+
 @media only screen and (max-width: 56.25em) {
   .web {
     padding: 2rem;

@@ -37,15 +37,4 @@
             font-style: oblique;
         }
     }
-
-    &__arrow {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &--icon {
-            width: 10rem;
-            transform: rotate(90deg);
-        }
-    }
 }

@@ -258,14 +258,7 @@ html {
 
 .landscape {
   grid-column: full-start/full-end;
-  background: rgb(253, 252, 251);
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(250deg, #ffffff 0%, #ffffff 50%, #f6f0ec 50%, #f6f0ec 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdfcfb", endColorstr="#f6f0ec", GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
+  background: rgb(255, 255, 255);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -545,6 +538,11 @@ footer {
 .skills {
   padding: 5rem 0;
   grid-column: full-start/full-end;
+}
+@media only screen and (min-width: 56.25em) {
+  .skills {
+    grid-column: center-start/center-end;
+  }
 }
 @media only screen and (max-width: 35em) {
   .skills {

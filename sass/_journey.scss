@@ -1,5 +1,5 @@
 .journey {
-    margin: 5rem 2rem;
+    margin: 2rem;
     font-size: 2.5rem;
 
     @media only screen and (max-width: $bp-xbig) {
@@ -21,14 +21,14 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        margin: 5rem 0;
+        margin: 3rem 0;
 
         &__heading {
             text-align: center;
         }
 
         &__body {
-            text-align: center;
+            text-align: justify;
             max-width: 40em;
         }
 

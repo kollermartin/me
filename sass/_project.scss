@@ -12,7 +12,7 @@
 
     @media only screen and (max-width: $bp-small) {
         grid-column: full-start / full-end;
-        padding: 2.5rem;
+        padding: 2rem;
     }
 }
 
@@ -72,7 +72,6 @@
     }
 
     &__info {
-        padding: 0 2.5rem;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -102,7 +101,6 @@
             img {
                 width: 3rem;
                 transition: all .3s;
-
             }
 
             &__box {
@@ -138,11 +136,13 @@
 
 .used-technologies {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 1.5rem;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
 
     &__name {
-        font-weight: 600;
+        font-weight: 400;
         text-align: center;
     }
 }

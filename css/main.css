@@ -345,7 +345,7 @@ html {
 @media only screen and (max-width: 35em) {
   .project {
     grid-column: full-start/full-end;
-    padding: 2.5rem;
+    padding: 2rem;
   }
 }
 
@@ -406,7 +406,6 @@ html {
   }
 }
 .web__info {
-  padding: 0 2.5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -465,11 +464,13 @@ html {
 
 .used-technologies {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1.5rem;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 .used-technologies__name {
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -523,11 +524,11 @@ footer {
 }
 
 .heading--l {
-  font-size: 4.75rem;
+  font-size: 5rem;
 }
 
 .heading--m {
-  font-size: 3.5rem;
+  font-size: 3.75rem;
 }
 
 .heading--s {
@@ -551,7 +552,7 @@ footer {
 }
 
 .skills {
-  padding: 5rem 0;
+  padding: 0 0 2rem 0;
   grid-column: full-start/full-end;
 }
 @media only screen and (min-width: 56.25em) {
@@ -578,7 +579,7 @@ footer {
 @media only screen and (max-width: 35em) {
   .technologies {
     margin-top: 2.5rem;
-    padding: 0 2.5rem;
+    padding: 0 2rem;
   }
 }
 .technologies__card {
@@ -606,7 +607,7 @@ footer {
 }
 
 .journey {
-  margin: 5rem 2rem;
+  margin: 2rem;
   font-size: 2.5rem;
 }
 @media only screen and (max-width: 91.25em) {
@@ -626,13 +627,13 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 5rem 0;
+  margin: 3rem 0;
 }
 .journey__item__heading {
   text-align: center;
 }
 .journey__item__body {
-  text-align: center;
+  text-align: justify;
   max-width: 40em;
 }
 .journey__item__footer {

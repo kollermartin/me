@@ -1,6 +1,5 @@
 .landscape {
     grid-column: full-start / full-end;
-    background: rgb(255, 255, 255);
 
     display: flex;
     justify-content: space-around;
@@ -9,6 +8,7 @@
     margin-top: 5rem;
     cursor: default;
     letter-spacing: .3rem;
+    z-index: 10;
 
     &__header {
 

@@ -36,6 +36,7 @@ html {
 .container {
   background-color: #f6f0ec;
   color: #282828;
+  position: relative;
   display: grid;
   grid-template-columns: [full-start] minmax(5rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] minmax(5rem, 1fr) [full-end];
   grid-template-rows: 100vh repeat(4, min-content);
@@ -44,6 +45,20 @@ html {
   .container {
     grid-template-columns: [full-start] minmax(2.5rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] minmax(2.5rem, 1fr) [full-end];
   }
+}
+
+.skewed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 0;
+  transform: skewY(5deg);
+  transform-origin: top right;
 }
 
 .header {
@@ -258,7 +273,6 @@ html {
 
 .landscape {
   grid-column: full-start/full-end;
-  background: rgb(255, 255, 255);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -266,6 +280,7 @@ html {
   margin-top: 5rem;
   cursor: default;
   letter-spacing: 0.3rem;
+  z-index: 10;
 }
 .landscape__header {
   display: flex;
@@ -321,6 +336,7 @@ html {
   grid-column: center-start/center-end;
   display: grid;
   justify-items: center;
+  gap: 4rem;
   padding: 5rem 0;
 }
 .project__heading {
@@ -333,8 +349,14 @@ html {
   }
 }
 
+.separator {
+  margin: 0 auto;
+  width: 85%;
+  height: 1px;
+  background-color: hsla(0, 9%, 19%, 0.105);
+}
+
 .web {
-  margin-top: 7rem;
   display: flex;
   flex-wrap: wrap;
   place-items: center;
@@ -367,6 +389,8 @@ html {
   position: relative;
   transition: all 0.3s;
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 .web__image img {
   width: 55rem;
@@ -439,15 +463,6 @@ html {
   transform: scale(1.1);
 }
 
-.web:nth-child(odd) {
-  flex-direction: row-reverse;
-}
-@media only screen and (max-width: 100em) {
-  .web:nth-child(odd) {
-    flex-direction: column;
-  }
-}
-
 .used-technologies {
   display: flex;
   justify-content: space-evenly;
@@ -508,11 +523,11 @@ footer {
 }
 
 .heading--l {
-  font-size: 6rem;
+  font-size: 4.75rem;
 }
 
 .heading--m {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .heading--s {
@@ -622,5 +637,5 @@ footer {
 }
 .journey__item__footer {
   text-align: center;
-  font-style: oblique;
+  font-size: 2rem;
 }

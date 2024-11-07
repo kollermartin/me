@@ -169,9 +169,8 @@ html {
 
 .profile {
   margin-top: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  justify-items: center;
 }
 @media only screen and (max-width: 56.25em) {
   .profile {
@@ -182,20 +181,12 @@ html {
 .profile__info {
   font-size: 2.5rem;
   text-align: justify;
-  flex: 70%;
-  padding: 2rem 5rem;
-}
-@media only screen and (max-width: 35em) {
-  .profile__info {
-    padding: 2rem 2rem;
-  }
-}
-.profile__photo {
-  flex: 30%;
+  max-width: 40em;
+  padding: 2rem 2rem;
 }
 .profile__photo img {
   width: 100%;
-  max-width: 50em;
+  max-width: 20em;
   height: 100%;
   border-radius: 5%;
   box-shadow: 0px 0px 10px #000;
@@ -203,11 +194,6 @@ html {
 @media only screen and (max-width: 81.25em) {
   .profile__photo {
     padding: 2rem;
-  }
-}
-@media only screen and (max-width: 56.25em) {
-  .profile__photo {
-    width: 60%;
   }
 }
 

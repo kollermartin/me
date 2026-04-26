@@ -1,0 +1,17 @@
+{
+  "name": "kollermartin-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio for kollermartin.com (static, deployed via GitHub Pages).",
+  "scripts": {
+    "build": "sass sass/main.scss css/main.css --style=expanded --no-source-map",
+    "watch": "sass --watch sass/main.scss css/main.css --style=expanded --no-source-map",
+    "serve": "live-server --port=4173 --no-browser",
+    "dev": "concurrently -k -n SASS,SERVE -c cyan,magenta \"npm run watch\" \"npm run serve\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "live-server": "^1.2.2",
+    "sass": "^1.99.0"
+  }
+}

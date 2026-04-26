@@ -1,40 +1,69 @@
+@use './variables' as *;
+
+// .journey is a nested <section> inside .about — strip the global section
+// padding/centering so it flows as a sub-block of about.
 .journey {
-    margin: 2rem;
-    font-size: 2.5rem;
+    max-width: none;
+    margin: 0;
+    padding: $space-xl 0 0;
+    scroll-margin-top: 0;
 
-    @media only screen and (max-width: $bp-xbig) {
-        grid-column: center-start / center-end;
-
-    }
-
-    &__heading {
-        text-align: center;
+    > h2 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: $space-l;
+        text-align: left;
+        letter-spacing: -0.015em;
     }
 
     &__container {
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: $space-m;
     }
 
     &__item {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        margin: 3rem 0;
+        position: relative;
+        padding: $space-l;
+        border: 1px solid $color-border;
+        border-radius: $radius-l;
+        background: $color-surface;
+        transition: border-color $transition, box-shadow $transition;
 
-        &__heading {
-            text-align: center;
+        @media (hover: hover) {
+            &:hover {
+                border-color: $color-border-strong;
+                box-shadow: $shadow-s;
+            }
         }
 
-        &__body {
-            text-align: justify;
-            max-width: 40em;
+        &__heading {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: $color-text;
+            margin-bottom: $space-xs;
         }
 
         &__footer {
-            text-align: center;
-            font-size: 2rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: $color-text-subtle;
+            margin-bottom: $space-m;
+
+            b {
+                font-weight: 500;
+            }
+        }
+
+        &__body {
+            font-size: 1.5rem;
+            line-height: 1.65;
+            color: $color-text-muted;
+
+            b {
+                color: $color-text;
+                font-weight: 600;
+            }
         }
     }
 }

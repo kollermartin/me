@@ -1,42 +1,58 @@
-.line {
-  width: 80%;
-  height: 2px;
-  margin: 2rem 0;
-}
+@use './variables' as *;
 
-.line--w {
-  background-color: #000;
-}
-
-.line--b {
-  background-color: rgb(98, 98, 129);
-  margin: 0 auto;
-}
-
+// Section heading sizes (used as h2/h3/h4 modifiers in markup)
 .heading--l {
-  font-size: 5rem;
+    font-size: clamp(2.8rem, 4vw, 4rem);
+    font-weight: 700;
+    margin-bottom: $space-xl;
+    letter-spacing: -0.02em;
 }
 
 .heading--m {
-  font-size: 3.75rem;
+    font-size: 2.2rem;
+    font-weight: 600;
 }
 
 .heading--s {
-  font-size: 3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+// Spacing helpers preserved from the previous markup
+.mb-s {
+    margin-bottom: $space-m;
 }
 
 .ta-c {
-  text-align: center;
+    text-align: center;
 }
 
-.mb-s {
-  margin-bottom: 2.5rem;
+// Decorative line from the old hero — retired.
+.line,
+.line--w,
+.line--b {
+    display: none;
 }
 
-.mt--m {
-  margin-top: 3rem;
+// Empty divider between project rows — replaced by a border, so hide the markup.
+.separator {
+    display: none;
 }
 
+// Active-nav indicator. Renamed visually to a subtle dot, but the class
+// hook stays as `.underscore` because script.js toggles that exact name.
 .underscore {
-  border-bottom: 2px solid $text-grey;
+    color: $color-text;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0.4rem;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+        background: $color-accent;
+        transform: translateX(-50%);
+    }
 }

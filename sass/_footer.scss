@@ -1,9 +1,12 @@
-footer {
-    grid-column: full-start / full-end;
+@use './variables' as *;
 
-    padding: 2.5rem;
+footer {
+    border-top: 1px solid $color-border;
+    padding: $space-l;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 1.4rem;
+    color: $color-text-subtle;
+    margin-top: $space-xxl;
 }

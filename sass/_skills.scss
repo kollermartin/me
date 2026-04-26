@@ -1,55 +1,64 @@
+@use './variables' as *;
+
 .skills {
-  padding: 0 0 2rem 0;
-  grid-column: full-start / full-end;
-  
-  @media only screen and (min-width: $bp-medium){
-    grid-column: center-start / center-end;
-  }
-
-  @media only screen and (max-width: $bp-small){
-    padding: 2.5rem 0;
-  }
-
-  &__heading {
-    text-align: center;
-  }
+    &__heading {
+        margin-bottom: $space-xl;
+    }
 }
 
 .technologies {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  grid-row-gap: 3rem;
-  margin-top: 4rem;
-  padding: 0 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: $space-l;
 
-  @media only screen and (max-width: $bp-small){
-    margin-top: 2.5rem;
-    padding: 0 2rem;
-  }
-
-  &__card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 2rem;
-    transition: all 0.5s;
-    @media(hover: hover) {
-      &:hover {
-        transform: scale(1.15);
-      }
-    }
-    
-    &__head {
-      font-size: 3rem;
-      font-weight: 300;
+    @media (max-width: $bp-small) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space-m;
     }
 
-    &__body {
-      padding: 1rem 5rem;
-      img {
-        width: 10rem;
-      }
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $space-m;
+        padding: $space-l;
+        border: 1px solid $color-border;
+        border-radius: $radius-l;
+        background: $color-surface;
+        aspect-ratio: 1;
+        transition: border-color $transition, box-shadow $transition, transform $transition;
+
+        @media (hover: hover) {
+            &:hover {
+                border-color: $color-border-strong;
+                box-shadow: $shadow-m;
+                transform: translateY(-2px);
+            }
+        }
+
+        // Markup puts the label first and the icon second; flip order so
+        // the icon sits on top and the label reads underneath.
+        &__head {
+            order: 2;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $color-text;
+        }
+
+        &__body {
+            order: 1;
+            width: 6rem;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
     }
-  }
 }

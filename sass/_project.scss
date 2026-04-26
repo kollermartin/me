@@ -1,149 +1,149 @@
-.project {
-    grid-column: center-start / center-end;
-    display: grid;
-    justify-items: center;
-    gap: 4rem;
+@use './variables' as *;
 
-    padding: 5rem 0;
-
-    &__heading {
-        text-align: center;
-    }
-
-    @media only screen and (max-width: $bp-small) {
-        grid-column: full-start / full-end;
-        padding: 2rem;
-    }
-}
-
-.separator {
-    margin: 0 auto;
-    width: 85%;
-    height: 1px;
-    background-color: hsla(0, 9%, 19%, 0.105);
-}
 
 .web {
-    display: flex;
-    flex-wrap: wrap;
-    place-items: center;
-    max-width: 140rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: $space-xl;
+    align-items: center;
+    padding: $space-xl 0;
+    border-bottom: 1px solid $color-border;
 
-    a:visited,
-    a:link,
-    a:active,
-    a:link {
-        color: inherit;
-        border: 1px dotted inherit;
-
+    @media (max-width: $bp-medium) {
+        grid-template-columns: 1fr;
+        gap: $space-l;
+        padding: $space-l 0;
+        align-items: start;
     }
 
-    @media only screen and (max-width: $bp-medium) {
-        padding: 2rem;
+    &:first-of-type {
+        padding-top: 0;
     }
 
-    @media only screen and (max-width: 100em) {
-        flex-direction: column;
+    &:last-of-type {
+        border-bottom: none;
     }
 
-    @media only screen and (max-width: $bp-min) {
-        padding: 0 0 1rem 0;
-        margin-top: 3.5rem;
+    // Alternate the image side on desktop for visual rhythm.
+    &:nth-of-type(even) {
+        @media (min-width: $bp-medium) {
+            .web__image { order: 2; }
+            .web__info  { order: 1; }
+        }
     }
 
     &__image {
-        position: relative;
-        transition: all .3s;
-        flex: 1;
-        display: flex;
-        justify-content: center;
-
         img {
-            width: 55rem;
-            height: 100%;
+            width: 100%;
+            aspect-ratio: 16 / 10;
             object-fit: cover;
-            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-
-            @media only screen and (max-width: 100em) {
-                width: 100%;
-                height: 40rem;
-            }
+            border-radius: $radius-l;
+            box-shadow: $shadow-s;
         }
     }
 
     &__info {
-        flex: 1;
         display: flex;
         flex-direction: column;
 
         &__heading {
-            text-align: center;
+            text-align: left;
+            margin-bottom: $space-s;
 
-            @media only screen and (max-width: 100em) {
-                margin-top: 2rem;
+            h3 {
+                font-size: 2.4rem;
+                font-weight: 600;
+                color: $color-text;
+                margin: 0;
             }
         }
 
         &__description {
-            font-size: 2.5rem;
-            text-align: justify;
+            p {
+                font-size: 1.55rem;
+                line-height: 1.65;
+                color: $color-text-muted;
+                margin: 0 0 $space-m;
+
+                a {
+                    color: $color-accent;
+                    font-weight: 500;
+                }
+
+                b {
+                    color: $color-text;
+                    font-weight: 600;
+                }
+            }
+
+            // "Technologies" label above each tag list.
+            h4 {
+                text-align: left;
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: $color-text-subtle;
+                margin: $space-m 0 $space-s;
+            }
         }
 
         &__links {
-            font-size: 3rem;
-            margin-top: 4rem;
             display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            align-items: center;
-            font-weight: 800;
+            flex-wrap: wrap;
+            gap: $space-s;
+            margin-top: $space-m;
 
-            img {
-                width: 3rem;
-                transition: all .3s;
+            a {
+                color: $color-text;
+
+                &:hover {
+                    color: $color-text;
+                }
             }
 
             &__box {
-                display: flex;
+                display: inline-flex;
                 align-items: center;
-                gap: .5rem;
-            }
+                gap: $space-s;
+                padding: $space-s $space-m;
+                font-size: 1.4rem;
+                font-weight: 500;
+                background: $color-surface;
+                border: 1px solid $color-border-strong;
+                border-radius: $radius-m;
+                transition: background-color $transition, border-color $transition;
 
-            a:visited,
-            a:link,
-            a:active,
-            a:link {
-
-                color: #000;
-                text-decoration: none;
-                transition: all .2s;
-
-                &:hover {
-                    color: #0000008d;
-                    transition: all .3s;
-
-                    img {
-                        transform: scale(1.1);
-                    }
+                img {
+                    width: 1.6rem;
+                    height: 1.6rem;
                 }
 
+                @media (hover: hover) {
+                    &:hover {
+                        background: $color-bg-alt;
+                        border-color: $color-text;
+                    }
+                }
             }
         }
     }
-
-
 }
 
 .used-technologies {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
     flex-wrap: wrap;
+    gap: $space-s;
 
     &__name {
-        font-weight: 400;
-        text-align: center;
+        display: inline-block;
+        padding: $space-xs $space-m;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: $color-text-muted;
+        background: $color-bg-alt;
+        border: 1px solid $color-border;
+        border-radius: $radius-pill;
     }
 }
 
@@ -151,30 +151,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5rem;
-
-    a:visited,
-    a:link,
-    a:active,
-    a:link {
-        color: inherit;
-        border: 1px dotted inherit;
-
-    }
+    gap: $space-l;
+    margin-top: $space-xxl;
+    padding: $space-xl;
+    background: $color-bg-alt;
+    border: 1px solid $color-border;
+    border-radius: $radius-l;
 
     h2 {
-        margin: 4rem 0 2rem 0;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $color-text;
+        margin: 0;
+        text-align: center;
     }
 
-    img {
-        transition: all .5s;
-        width: 8rem;
-        cursor: pointer;
+    &__link {
+        color: $color-accent;
+        font-weight: 600;
 
         &:hover {
-            transform: scale(1.2);
+            color: $color-accent-hover;
         }
     }
 
+    img {
+        width: 4rem;
+        height: 4rem;
+        transition: transform $transition;
 
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }

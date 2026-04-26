@@ -1,42 +1,77 @@
-.line {
-  width: 80%;
-  height: 2px;
-  margin: 2rem 0;
+@use './variables' as *;
+
+// Wrapper around an eyebrow + heading pair. Owns the bottom margin so
+// per-section heading classes don't need to.
+.section__head {
+    margin-bottom: $space-xl;
 }
 
-.line--w {
-  background-color: #000;
+// Small uppercase tag above each section title (e.g. "01 — About").
+// Inherits text-align from the section, so it centres in .contact and
+// stays left-aligned everywhere else.
+.section__eyebrow {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-text-subtle;
+    margin-bottom: $space-s;
 }
 
-.line--b {
-  background-color: rgb(98, 98, 129);
-  margin: 0 auto;
-}
-
+// Section heading sizes (used as h2/h3/h4 modifiers in markup)
 .heading--l {
-  font-size: 5rem;
+    font-size: clamp(2.8rem, 4vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
 }
 
 .heading--m {
-  font-size: 3.75rem;
+    font-size: 2.2rem;
+    font-weight: 600;
 }
 
 .heading--s {
-  font-size: 3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+// Spacing helpers preserved from the previous markup
+.mb-s {
+    margin-bottom: $space-m;
 }
 
 .ta-c {
-  text-align: center;
+    text-align: center;
 }
 
-.mb-s {
-  margin-bottom: 2.5rem;
+// Decorative line from the old hero — retired.
+.line,
+.line--w,
+.line--b {
+    display: none;
 }
 
-.mt--m {
-  margin-top: 3rem;
+// Empty divider between project rows — replaced by a border, so hide the markup.
+.separator {
+    display: none;
 }
 
+// Active-nav indicator. Renamed visually to a subtle dot, but the class
+// hook stays as `.underscore` because script.js toggles that exact name.
 .underscore {
-  border-bottom: 2px solid $text-grey;
+    color: $color-text;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0.4rem;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+        background: $color-accent;
+        transform: translateX(-50%);
+    }
 }

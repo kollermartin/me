@@ -1,103 +1,69 @@
-.contact {
-    grid-column: full-start / full-end;
-    padding: 2.5rem 0;
-    margin-top: 5rem;
-    height: 40vh;
+@use './variables' as *;
 
-    a:visited,
-            a:link,
-            a:active,
-            a:link {
-                text-decoration: none;
-                
-                
-            }
+.contact {
+    text-align: center;
 
     &__bio {
-       // padding: 5rem;
-        //width: 60vw;
         display: flex;
-       // flex-direction: column;
-       // margin: 0 auto;
         justify-content: center;
-        align-items: center;
-        margin-top: 5rem;
-        
-        
+        margin-top: $space-xl;
+    }
+}
+
+.bio {
+    &__header {
+        display: flex;
+        justify-content: center;
+
+        &__photo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: $space-m;
+        }
     }
 
-    .bio {
-        
+    &__body {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform $transition, border-color $transition;
 
-        &__header {
-            display: flex;
-           // justify-content: center;
-            
-            &__photo {
-                display: flex;
-                flex-wrap: wrap;
-                //flex-direction: column;
-               // align-items: center;
-                img {
-                    width: 15vw;
-                    border-radius: 25%;
-                    
-                }
-               
+        @media (hover: hover) {
+            &:hover {
+                transform: translateY(-2px);
             }
-            
         }
 
-        &__body {
-           
-            // width: 50rem;
-            // margin: 2rem auto;
-            transition: all .2s;
-            
+        &__info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            &__info {
-                
-                padding: 2rem;
-                font-size: 2.5rem;
-                //width: 60rem;
+            .info__icon {
                 display: flex;
                 align-items: center;
-               // justify-content: center;
-                
-                //box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.219);
-               
-                
+                justify-content: center;
+                width: 5.6rem;
+                height: 5.6rem;
+                border: 1px solid $color-border;
+                border-radius: $radius-m;
+                background: $color-surface;
+                transition: border-color $transition, background-color $transition;
 
-                .info__icon {
-                    
-                    transition: all .5s;
-                    img {
-                        width: 8rem;
-                        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.171);
-                    }
-
-                    &:hover {
-                        transform: scale(1.2);
-                    }
+                img {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    object-fit: contain;
                 }
 
-                .info__detail {
-                    display: flex;
-                    flex-direction: column;
-                    // min-width: 25rem;
-                    margin-left: 2rem;
-
-                    &__platform {
-                        font-size: 3rem;
-                    }
-
-                    &__det {
-                        color: rgb(105, 95, 95);
+                @media (hover: hover) {
+                    &:hover {
+                        border-color: $color-text;
+                        background: $color-bg-alt;
                     }
                 }
             }
-
         }
     }
-
 }

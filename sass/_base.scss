@@ -1,57 +1,107 @@
+@use './variables' as *;
+
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 html {
-    box-sizing: border-box;
     font-size: 62.5%;
-    font-weight: 400;
+    scroll-behavior: smooth;
+    scroll-padding-top: $header-height;
+    -webkit-text-size-adjust: 100%;
+
+    @media (max-width: $bp-medium) {
+        font-size: 58%;
+    }
+}
+
+body {
     font-family: $font-main;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: $color-text;
+    background: $color-bg;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-    @media only screen and (max-width: $bp-big) {
-        font-size: 55%;
-    }
+img {
+    max-width: 100%;
+    display: block;
+}
 
-    @media only screen and (max-width: $bp-medium) {
-        font-size: 50%;
-    }
+a {
+    color: $color-accent;
+    text-decoration: none;
+    transition: color $transition;
 
-    @media only screen and (max-width: $bp-small) {
-        font-size: 47%;
-    }
-
-    @media only screen and (max-width: $bp-min) {
-        font-size: 44%;
+    &:hover {
+        color: $color-accent-hover;
     }
 }
 
+button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+::selection {
+    background: $color-accent-soft;
+    color: $color-accent-hover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: $color-text;
+}
+
+p {
+    color: $color-text-muted;
+}
+
+// Page wrapper — replaces the old CSS-grid container so sections
+// can flow naturally and centre via their own max-width.
 .container {
-    background-color: #f6f0ec;
-    color: $text-grey;
-    position: relative;
-    display: grid;
-    grid-template-columns: [full-start] minmax(5rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 1fr)[col-end]) [center-end] minmax(5rem, 1fr) [full-end];
-    grid-template-rows: 100vh repeat(4, min-content);
-
-    @media only screen and (max-width: $bp-small) {
-        grid-template-columns: [full-start] minmax(2.5rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 1fr)[col-end]) [center-end] minmax(2.5rem, 1fr) [full-end];
-    }
+    background: $color-bg;
+    color: $color-text;
+    display: block;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    padding-top: $header-height;
 }
 
+// Decorative skewed panel from the previous design — retired.
 .skewed {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #fff;
-    z-index: 0;
-    transform: skewY(5deg);
-    transform-origin: top right;
+    display: none;
+}
+
+section {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: $space-xxxl $space-l;
+    scroll-margin-top: $header-height;
+
+    @media (max-width: $bp-medium) {
+        padding: $space-xxl $space-l;
+    }
+
+    @media (max-width: $bp-small) {
+        padding: $space-xxl $space-m;
+    }
 }

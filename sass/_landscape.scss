@@ -1,71 +1,197 @@
+@use './variables' as *;
+
 .landscape {
-    grid-column: full-start / full-end;
-
+    position: relative;
+    isolation: isolate;
+    min-height: calc(100vh - #{$header-height});
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
-    margin-top: 5rem;
-    cursor: default;
-    letter-spacing: .3rem;
-    z-index: 10;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: $space-xxl;
+    padding-bottom: $space-xxl;
 
-    &__header {
+    // Full-bleed dot-grid backdrop with a radial mask so the pattern fades
+    // out toward the edges instead of cutting off hard. Sits behind the
+    // hero content because of `isolation: isolate` + `z-index: -1`.
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 100vw;
+        transform: translateX(-50%);
+        z-index: -1;
+        background-image: radial-gradient(circle, rgba(10, 10, 10, 0.10) 1px, transparent 1px);
+        background-size: 24px 24px;
+        mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 0%, black 35%, transparent 80%);
+        -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 0%, black 35%, transparent 80%);
+        pointer-events: none;
+    }
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+
+    &__status {
+        display: inline-flex;
         align-items: center;
-        color: $text-grey;
+        gap: $space-s;
+        padding: $space-xs $space-m;
+        margin-bottom: $space-l;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: $color-text-muted;
+        background: $color-bg-alt;
+        border: 1px solid $color-border;
+        border-radius: $radius-pill;
 
-        &__preheader {
-            font-size: 5rem;
+        &__dot {
+            position: relative;
+            width: 0.7rem;
+            height: 0.7rem;
+            border-radius: 50%;
+            background: #16a34a;
 
-            @media only screen and (max-width: $bp-min) {
-                font-size: 4rem;
-            }
-        }
-
-        &__heading {
-
-            font-size: 10rem;
-
-            @media only screen and (max-width: $bp-min) {
-                font-size: 7rem;
-            }
-        }
-
-        &__subheading {
-
-            font-size: 5rem;
-
-            @media only screen and (max-width: $bp-min) {
-                font-size: 3.5rem;
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                background: #16a34a;
+                animation: landscape-status-pulse 2s ease-out infinite;
             }
         }
     }
 
+    &__header {
+        max-width: 100%;
+        margin-bottom: $space-xl;
 
-    &__scroll {
-        color: #fff;
+        &__preheader {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: $color-text-muted;
+            margin-bottom: $space-s;
+            letter-spacing: 0.02em;
+        }
+
+        &__heading {
+            font-size: clamp(5.6rem, 13vw, 14rem);
+            font-weight: 700;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            color: $color-text;
+            margin-bottom: $space-l;
+        }
+
+        &__subheading {
+            font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+            font-weight: 500;
+            color: $color-text-muted;
+        }
+    }
+
+    &__cta {
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
         align-items: center;
-        cursor: pointer;
+        gap: $space-m;
+    }
 
-        &__icon {
-            font-size: 15rem;
-            display: block;
-            transition: transform .4s;
-            width: 10rem;
+    &__social {
+        display: flex;
+        gap: $space-s;
+        margin-left: $space-s;
+
+        @media (max-width: $bp-small) {
+            margin-left: 0;
+            margin-top: $space-xs;
+            width: 100%;
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            border: 1px solid $color-border;
+            border-radius: $radius-m;
+            background: $color-surface;
+            transition: border-color $transition, background-color $transition, transform $transition;
+
+            img {
+                width: 1.8rem;
+                height: 1.8rem;
+                object-fit: contain;
+            }
 
             @media (hover: hover) {
                 &:hover {
-                    transform: scale(1.2) translateY(1rem);
+                    border-color: $color-text;
+                    background: $color-bg-alt;
+                    transform: translateY(-2px);
                 }
             }
-
-
         }
+    }
+
+    // Old hero arrow — kept in the DOM so script.js can still bind to it,
+    // but visually retired in the redesigned hero.
+    &__scroll {
+        display: none;
+    }
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space-m $space-l;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: $radius-m;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color $transition, color $transition, border-color $transition;
+
+    &--primary {
+        background: $color-text;
+        color: #fff;
+
+        @media (hover: hover) {
+            &:hover {
+                background: $color-accent;
+            }
+        }
+    }
+
+    &--secondary {
+        background: transparent;
+        color: $color-text;
+        border-color: $color-border-strong;
+
+        @media (hover: hover) {
+            &:hover {
+                background: $color-bg-alt;
+                border-color: $color-text;
+            }
+        }
+    }
+}
+
+@keyframes landscape-status-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(2.6);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .landscape__status__dot::before {
+        animation: none;
     }
 }

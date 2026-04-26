@@ -1,9 +1,90 @@
-footer {
-    grid-column: full-start / full-end;
+@use './variables' as *;
 
-    padding: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
+.footer {
+    border-top: 1px solid $color-border;
+    margin-top: $space-xxl;
+    padding: $space-xl $space-l;
+
+    &__inner {
+        max-width: $container-max;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $space-l;
+        flex-wrap: wrap;
+
+        @media (max-width: $bp-medium) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: $space-l;
+        }
+    }
+
+    &__brand {
+        display: flex;
+        align-items: baseline;
+        gap: $space-m;
+        font-size: 1.4rem;
+    }
+
+    &__name {
+        font-weight: 600;
+        color: $color-text;
+    }
+
+    &__copy {
+        color: $color-text-subtle;
+    }
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space-l;
+
+        @media (max-width: $bp-small) {
+            gap: $space-m;
+        }
+
+        a {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: $color-text-muted;
+            transition: color $transition;
+
+            &:hover {
+                color: $color-text;
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: $space-s;
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.6rem;
+            height: 3.6rem;
+            border: 1px solid $color-border;
+            border-radius: $radius-m;
+            background: $color-surface;
+            transition: border-color $transition, background-color $transition;
+
+            img {
+                width: 1.6rem;
+                height: 1.6rem;
+                object-fit: contain;
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    border-color: $color-text;
+                    background: $color-bg-alt;
+                }
+            }
+        }
+    }
 }

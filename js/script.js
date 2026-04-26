@@ -1,4 +1,6 @@
 const arrowScroll = document.querySelector('.landscape__scroll__icon');
+const ctaWork = document.querySelector('.landscape__cta--work');
+const ctaContact = document.querySelector('.landscape__cta--contact');
 const navHome = document.querySelector('.nav--home');
 const navAbout = document.querySelector('.nav--about');
 const navSkills = document.querySelector('.nav--skills');
@@ -81,9 +83,23 @@ const addAndRemoveClassesInHeader = () => {
 }
 
 
-arrowScroll.addEventListener("click", function () {
-    scrollToElement(aboutEl);
-});
+if (arrowScroll) {
+    arrowScroll.addEventListener("click", function () {
+        scrollToElement(aboutEl);
+    });
+}
+
+if (ctaWork) {
+    ctaWork.addEventListener("click", function () {
+        scrollToElement(projectsEl);
+    });
+}
+
+if (ctaContact) {
+    ctaContact.addEventListener("click", function () {
+        scrollToElement(contactEl);
+    });
+}
 
 
 navHome.addEventListener("click", function () {

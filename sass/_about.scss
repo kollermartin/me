@@ -1,10 +1,5 @@
 @use './variables' as *;
 
-.about {
-    &__heading {
-        margin-bottom: $space-xl;
-    }
-}
 
 .profile {
     display: grid;

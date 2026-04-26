@@ -1,10 +1,5 @@
 @use './variables' as *;
 
-.project {
-    &__heading {
-        margin-bottom: $space-xl;
-    }
-}
 
 .web {
     display: grid;

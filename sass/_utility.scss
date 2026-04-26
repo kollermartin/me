@@ -1,11 +1,30 @@
 @use './variables' as *;
 
+// Wrapper around an eyebrow + heading pair. Owns the bottom margin so
+// per-section heading classes don't need to.
+.section__head {
+    margin-bottom: $space-xl;
+}
+
+// Small uppercase tag above each section title (e.g. "01 — About").
+// Inherits text-align from the section, so it centres in .contact and
+// stays left-aligned everywhere else.
+.section__eyebrow {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-text-subtle;
+    margin-bottom: $space-s;
+}
+
 // Section heading sizes (used as h2/h3/h4 modifiers in markup)
 .heading--l {
     font-size: clamp(2.8rem, 4vw, 4rem);
     font-weight: 700;
-    margin-bottom: $space-xl;
     letter-spacing: -0.02em;
+    margin: 0;
 }
 
 .heading--m {
